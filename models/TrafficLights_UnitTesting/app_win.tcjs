@@ -1,0 +1,53 @@
+// Windows - Visual Studio 15
+let tc = TCF.define(TCF.CPP_TRANSFORM);
+tc.pocoLoc = 'D:\\github\\poco';
+tc.sources = [
+    'platform:/resource/TrafficLights_UnitTesting/TrafficLightComponent.emx#_rx2SkNXDEei3BJT-OqdJZA'
+];
+tc.topCapsule = 'platform:/resource/TrafficLights_UnitTesting/TrafficLightComponent.emx#_4gz4gNXDEei3BJT-OqdJZA';
+tc.createTargetProject = true;
+tc.targetProject = '/TrafficLightsUnitTesting_target';
+tc.compilationMakeCommand = '$defaultMakeCommand';
+
+tc.compilationMakeType = MakeType.MS_nmake;
+tc.targetConfiguration = 'WinT.x64-VisualC++-15.0';
+tc.compileArguments = '/MD';
+tc.linkArguments = '/MACHINE:X64 /LIBPATH:"' + tc.pocoLoc + '\\lib64"';
+
+tc.threads = [
+{
+    name: 'MainThread',
+    implClass: 'RTPeerController',
+    stackSize: '20000',
+    priority: 'DEFAULT_MAIN_PRIORITY'
+},
+{
+    name: 'TimerThread',
+    implClass: 'RTTimerController',
+    stackSize: '20000',
+    priority: 'DEFAULT_TIMER_PRIORITY'
+},
+{
+    name: 'ServerThread',
+    implClass: 'RTPeerController',
+    stackSize: '20000',
+    priority: 'DEFAULT_MAIN_PRIORITY',
+    logical: [
+        'ServerThread'
+    ]
+},
+{
+    name: 'PushButtonThread',
+    implClass: 'RTPeerController',
+    stackSize: '20000',
+    priority: 'DEFAULT_MAIN_PRIORITY',
+    logical: [
+        'PushButtonThread'
+    ]
+}
+];
+tc.prerequisites = [
+    'platform:/resource/LibHttpServer/httpServerLib.tcjs',
+    'platform:/resource/LibTcpServer/tcpServerLib.tcjs'
+];
+tc.executableName = 'executable$(EXEC_EXT)';

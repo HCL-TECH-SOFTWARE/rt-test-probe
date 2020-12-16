@@ -1,0 +1,23 @@
+let tc = TCF.define(TCF.CPP_TRANSFORM);
+//let pocoLoc = 'D:\\rtist-11\\eclipse-cpp-2019-06-R-win32-x86_64\\eclipse\\rsa_rt\\tcpserver\\poco';
+//tc.pocoLoc = 'D:\\rtist-photon\\eclipse-cpp-photon-R-win32-x86_64\\eclipse\\rsa_rt\\tcpserver\\poco';
+tc.pocoLoc = '$(RSA_RT_HOME)\\tcpserver\\poco';
+
+tc.sources = [
+    'TrafficLightComponent.emx#_piBhsMj6EemAJ4GeYf92vQ'
+];
+tc.topCapsule = 'TrafficLightComponent.emx#_VvC0gMj8Eemz-Kts3CmcDQ';
+tc.createTargetProject = true;
+tc.targetProject = '/TrafficLight_target';
+tc.prerequisites = [
+    'platform:/resource/LibTcpServer/tcpServerLib.tcjs'
+];
+tc.compilationMakeType = MakeType.MS_nmake;
+tc.linkArguments = '/MACHINE:X64 /LIBPATH:"' + tc.pocoLoc + '\\WinT.x64-VisualC++-15.0" -lWs2_32';
+tc.targetConfiguration = 'WinT.x64-VisualC++-15.0';
+tc.userLibraries = [
+    
+];
+tc.targetServicesLibrary = '${RSA_RT_HOME}/C++/TargetRTS';
+tc.compilationMakeArguments = '-s';
+tc.compileArguments = '/DPOCO_STATIC';
