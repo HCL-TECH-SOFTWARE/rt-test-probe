@@ -1,0 +1,25 @@
+{
+  "name": "capsule-tester",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Testing of capsules in an RT application using the TCPServer library",
+  "keywords": [],
+  "author": "Mattias Mohlin",
+  "main": "app.js",
+  "dependencies": {
+    "esm": "^3.2.25"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha"
+  },
+  "jshintConfig": {
+    "esversion": 6,
+    "strict": true,
+    "-W097": true,
+    "node": true
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
+}
