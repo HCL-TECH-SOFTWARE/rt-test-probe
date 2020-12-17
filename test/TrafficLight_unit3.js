@@ -1,8 +1,8 @@
 var assert = require('assert');
 
 // Unit tests for the TrafficLight capsule (2nd version of TrafficLight demo application)
-// Model: D:\eclipse-workspace\rtist_demo\trafficlight-demo
-// Launch: D:\eclipse-workspace\CapsuleTesting\TrafficLight_target\default>executable.EXE -URTS_DEBUG=quit
+// Model: models\trafficlight-demo (project TrafficLight)
+// Launch: models\TrafficLight_target\default>executable.EXE -URTS_DEBUG=quit
 describe('TrafficLight', function() {
 
     it('should handle the "pushData" event with data', function() {

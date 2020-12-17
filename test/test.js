@@ -2,10 +2,11 @@ var assert = require('assert');
 const { performance } = require('perf_hooks');
 
 // Test the interaction between the TrafficLight and PedLight capsules
-// Model: D:\eclipse-workspace\CapsuleTesting\TrafficLightsTesting
-// Prep 1: set PATH=D:\github\poco\bin64;%PATH%
-// Prep 2: D:\github\hcl-pnp-rtist\traffic-light-web\webapp>node app.js
-// Launch: D:\eclipse-workspace\CapsuleTesting\TrafficLightsTesting_target\default>executable.EXE -webhost=localhost -webport=4001 -URTS_DEBUG=quit
+// Model: models\TrafficLightsTesting
+// Preparations: Clone https://github.com/hcl-pnp-rtist/traffic-light-web and start the web application on port 4000
+//               Open a shell and run the command
+//               set PATH=D:\github\poco\bin64;%PATH%
+// Launch: models\TrafficLightsTesting_target\default>executable.EXE -webhost=localhost -webport=4000 -URTS_DEBUG=quit
 describe('TrafficLight + PedLight', function() {
 
     describe('send pedestrian event', function() {

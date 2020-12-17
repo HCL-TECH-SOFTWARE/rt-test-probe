@@ -1,10 +1,11 @@
 var assert = require('assert');
 
 // Unit tests for the TrafficLight capsule
-// Model: D:\eclipse-workspace\CapsuleTesting\TrafficLights_UnitTesting
-// Prep 1: set PATH=D:\github\poco\bin64;%PATH%
-// Prep 2: D:\github\hcl-pnp-rtist\traffic-light-web\webapp>node app.js
-// Launch: D:\eclipse-workspace\CapsuleTesting\TrafficLightsUnitTesting_target\default>executable.EXE -webhost=localhost -webport=4001 -URTS_DEBUG=quit
+// Model: models\TrafficLights_UnitTesting
+// Preparations: Clone https://github.com/hcl-pnp-rtist/traffic-light-web and start the web application on port 4000
+//               Open a shell and run the command
+//               set PATH=D:\github\poco\bin64;%PATH%
+// Launch: models\TrafficLightsUnitTesting_target\default>executable.EXE -webhost=localhost -webport=4000 -URTS_DEBUG=quit
 describe('TrafficLight', function() {
 
     it('should get the "red", "green" and "yellow" events in that order', function() {

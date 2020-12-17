@@ -2,8 +2,8 @@ var assert = require('assert');
 const { performance } = require('perf_hooks');
 
 // Unit tests for the TrafficLight capsule (2nd version of TrafficLight demo application)
-// Model: D:\eclipse-workspace\rtist_demo\trafficlight-demo (project TrafficLight)
-// Launch: D:\eclipse-workspace\CapsuleTesting\TrafficLight_target\default>executable.EXE -URTS_DEBUG=quit
+// Model: models\trafficlight-demo (project TrafficLight)
+// Launch: models\TrafficLight_target\default>executable.EXE -URTS_DEBUG=quit
 describe('TrafficLight', function() {
 
     it('should initially be in the Red state', function() {

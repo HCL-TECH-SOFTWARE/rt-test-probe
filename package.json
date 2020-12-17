@@ -1,5 +1,5 @@
 {
-  "name": "capsule-tester",
+  "name": "rt-test-probe",
   "version": "0.0.1",
   "private": true,
   "description": "Testing of capsules in an RT application using the TCPServer library",
