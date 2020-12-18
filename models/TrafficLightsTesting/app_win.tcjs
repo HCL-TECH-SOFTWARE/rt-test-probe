@@ -2,8 +2,7 @@
 let tc = TCF.define(TCF.CPP_TRANSFORM);
 tc.pocoLoc = 'D:\\github\\poco';
 tc.sources = [
-    'platform:/resource/TrafficLightsTesting/TrafficLightComponent.emx#_rx2SkNXDEei3BJT-OqdJZA',
-    'platform:/resource/TrafficLightsTesting/TrafficLightComponent.emx#_Rjgg8NXEEei3BJT-OqdJZA'
+    'platform:/resource/TrafficLightsTesting/TrafficLightComponent.emx#_rx2SkNXDEei3BJT-OqdJZA'
 ];
 tc.topCapsule = 'platform:/resource/TrafficLightsTesting/TrafficLightComponent.emx#_4gz4gNXDEei3BJT-OqdJZA';
 tc.createTargetProject = true;
