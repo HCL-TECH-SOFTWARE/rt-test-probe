@@ -1,7 +1,7 @@
 const { resolve } = require('path');
 
 /**
- * Utilties for testing RT applications that use the TcpServer library
+ * Utilities for testing RT applications that use the TcpServer library
  * @param {string} host Name of host where the RT application runs
  * @param {number} port Port where the RT application runs
  */
@@ -203,7 +203,7 @@ module.exports = function(host, port) {
         return new Promise((resolve, reject) => {
             return connect()
             .then((socket) => {
-                let json = '{ "event" : "' + rtEventName + '" , "command" : "invokeEvent", "priority" : "General", "port" : "' + rtPort + '"';
+                let json = '{ "event" : "' + rtEventName + '" , "command" : "invokeEvent", "port" : "' + rtPort + '"';
                 if (rtData) {
                     json += ', "data" : "' + rtData + '"';
                 }
@@ -246,7 +246,7 @@ module.exports = function(host, port) {
      * event failed to be sent.
      * @param {object} rtInvokedEvent An object representing the invoked event to which the reply event should be sent.
      * @param {string} rtEventName Name of reply event to send     
-     * @param {string} rtData String encoding of the data to send with the reply event
+     * @param {string} [rtData] String encoding of the data to send with the reply event
      */
     module.replyEvent = function(rtInvokedEvent, rtEventName, rtPort, rtData) {
         return new Promise((resolve, reject) => {
@@ -254,7 +254,11 @@ module.exports = function(host, port) {
                 reject(new Error('Attempted to reply to an event that was not invoked.'));
             }
             else {
-                let json = '{ "event" : "' + rtEventName + '" , "command" : "reply", "port" : "' + rtInvokedEvent.port + '", "data" : "' + rtData + '"}';
+                let json = '{ "event" : "' + rtEventName + '" , "command" : "reply", "port" : "' + rtInvokedEvent.port + '"';
+                if (rtData) {
+                    json += ', "data" : "' + rtData + '"';
+                }
+                json += '}';
                 rtInvokedEvent.conn.write(json); 
                 rtInvokedEvent.conn.end();
 
@@ -326,4 +330,3 @@ module.exports = function(host, port) {
 
     return module;
 }
-

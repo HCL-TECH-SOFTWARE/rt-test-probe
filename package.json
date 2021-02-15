@@ -1,9 +1,10 @@
 {
   "name": "rt-test-probe",
   "version": "0.0.1",
+  "license": "MIT",
   "private": true,
   "description": "Testing of capsules in an RT application using the TCPServer library",
-  "keywords": [],
+  "keywords": ["rtist", "rsarte", "unit testing", "uml-rt", "capsule", "mocha"],
   "author": "Mattias Mohlin",
   "main": "app.js",
   "dependencies": {
