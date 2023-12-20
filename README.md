@@ -1,18 +1,18 @@
 # rt-test-probe
-JavaScript implementation of a test probe for testing real-time applications created with [HCL RTist](https://www.hcltechsw.com/products/rtist).
+JavaScript implementation of a test probe for testing real-time applications created with [DevOps Model RealTime](https://www.hcl-software.com/devops-model-realtime).
 
 This repo contains a few JavaScript utilities (in the file `testProbe.js`) which let you send and invoke events to a real-time application that uses the [TcpServer](https://github.com/hcl-pnp-rtist/lib-tcp-server) library. It also allows you intercept outgoing events sent or invoked by the real-time application.
 
 Although this can be used as a means for general interaction with a real-time application from a JavaScript application, the main intended use case is to support testing of a real-time application. You can for example use the popular [Mocha](https://mochajs.org/) testing framework to write test cases for your real-time applications.
 
-In the `models` folder you will find a few sample RTist models which all are variants of the [traffic-light-web](https://github.com/hcl-pnp-rtist/traffic-light-web) sample application. In the `test` folder there are some Mocha tests for testing those models (both module testing, and unit testing of individual capsules).
+In the `models` folder you will find a few sample models, created with Model RealTime, which all are variants of the [traffic-light-web](https://github.com/HCL-TECH-SOFTWARE/traffic-light-web) sample application. In the `test` folder there are some Mocha tests for testing those models (both module testing, and unit testing of individual capsules).
 
 Feel free to extend `testProbe.js` to cover your testing needs, whether you are using Mocha or another testing framework. Pull requests are welcome!
 
 ## Steps for running a Mocha capsule unit test
-1. Start HCL RTist and import the "TrafficLight" project (located in the [trafficlight-demo](https://github.com/hcl-pnp-rtist/rt-test-probe/tree/main/models/trafficlight-demo) folder).
-2. Build the TC it contains (`app.tcjs`). Note that it's set-up to build the application using Visual Studio and links with the prebuilt version of the TcpServer library that is part of HCL RTist. You need to update the TC if you want to use another target configuration.
-3. Launch the built executable from HCL RTist or from the command-line. If you run it from the command-line start it like this:
+1. Start Model RealTime and import the "TrafficLight" project (located in the [trafficlight-demo](https://github.com/HCL-TECH-SOFTWARE/rt-test-probe/tree/main/models/trafficlight-demo) folder).
+2. Build the TC it contains (`app.tcjs`). Note that it's set-up to build the application using Visual Studio and links with the prebuilt version of the TcpServer library that is part of Model RealTime. You need to update the TC if you want to use another target configuration.
+3. Launch the built executable from Model RealTime or from the command-line. If you run it from the command-line start it like this:
 ```plaintext
 executable.EXE -URTS_DEBUG=quit
 ```
@@ -36,7 +36,7 @@ This requires that you have Node.js installed.
 
 6. Now you can run some unit tests for the TrafficLight capsule of the RT application that you launched. From the command-line you can do this:
 ```plaintext
-D:\github\hcl-pnp-rtist\rt-test-probe>npm test test/TrafficLight_unit2.js
+D:\github\HCL-TECH-SOFTWARE\rt-test-probe>npm test test/TrafficLight_unit2.js
 
 > rt-test-probe@0.0.1 test D:\github\hcl-pnp-rtist\rt-test-probe
 > mocha "test/TrafficLight_unit2.js"
@@ -52,6 +52,6 @@ D:\github\hcl-pnp-rtist\rt-test-probe>npm test test/TrafficLight_unit2.js
   3 passing (5s)
 ```
 You can also try with the test in `TrafficLight_unit3.js`.
-If you are a Visual Studio Code user there is a `launch.json` file [here](https://github.com/hcl-pnp-rtist/rt-test-probe/blob/main/.vscode/launch.json) which lets you debug the Mocha tests from within Visual Studio Code.
+If you are a Visual Studio Code user there is a `launch.json` file [here](https://github.com/HCL-TECH-SOFTWARE/rt-test-probe/blob/main/.vscode/launch.json) which lets you debug the Mocha tests from within Visual Studio Code.
 
 
