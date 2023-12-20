@@ -38,7 +38,7 @@ This requires that you have Node.js installed.
 ```plaintext
 D:\github\HCL-TECH-SOFTWARE\rt-test-probe>npm test test/TrafficLight_unit2.js
 
-> rt-test-probe@0.0.1 test D:\github\hcl-pnp-rtist\rt-test-probe
+> rt-test-probe@0.0.1 test D:\github\HCL-TECH-SOFTWARE\rt-test-probe
 > mocha "test/TrafficLight_unit2.js"
 
 
