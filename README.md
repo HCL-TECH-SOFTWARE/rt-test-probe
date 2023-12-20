@@ -1,7 +1,7 @@
 # rt-test-probe
 JavaScript implementation of a test probe for testing real-time applications created with [DevOps Model RealTime](https://www.hcl-software.com/devops-model-realtime).
 
-This repo contains a few JavaScript utilities (in the file `testProbe.js`) which let you send and invoke events to a real-time application that uses the [TcpServer](https://github.com/hcl-pnp-rtist/lib-tcp-server) library. It also allows you intercept outgoing events sent or invoked by the real-time application.
+This repo contains a few JavaScript utilities (in the file `testProbe.js`) which let you send and invoke events to a real-time application that uses the [TcpServer](https://github.com/HCL-TECH-SOFTWARE/lib-tcp-server) library. It also allows you intercept outgoing events sent or invoked by the real-time application.
 
 Although this can be used as a means for general interaction with a real-time application from a JavaScript application, the main intended use case is to support testing of a real-time application. You can for example use the popular [Mocha](https://mochajs.org/) testing framework to write test cases for your real-time applications.
 
