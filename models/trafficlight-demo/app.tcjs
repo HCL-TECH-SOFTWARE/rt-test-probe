@@ -1,18 +1,13 @@
 let tc = TCF.define(TCF.CPP_TRANSFORM);
-
 tc.sources = [
-    'TrafficLightComponent.emx#_piBhsMj6EemAJ4GeYf92vQ'
+    'TrafficLightComponent.emx#_piBhsMj6EemAJ4GeYf92vQ',
 ];
-tc.topCapsule = 'TrafficLightComponent.emx#_VvC0gMj8Eemz-Kts3CmcDQ';
-tc.createTargetProject = true;
-tc.targetProject = '/TrafficLight_target';
 tc.prerequisites = [
-    'platform:/resource/LibTcpServer/prebuilt_MSVS-15-x64.tcjs'
+    'platform:/resource/LibTcpServer/tcpServerLib.tcjs',
 ];
-tc.compilationMakeType = MakeType.MS_nmake;
-tc.targetConfiguration = 'WinT.x64-VisualC++-15.0';
-tc.userLibraries = [
-    
-];
-tc.targetServicesLibrary = '${RSA_RT_HOME}/C++/TargetRTS';
 tc.compilationMakeArguments = '-s';
+tc.compilationMakeType = MakeType.MS_nmake;
+tc.createTargetProject = true;
+tc.targetConfiguration = 'WinT.x64-VisualC++-17.0';
+tc.targetProject = '/TrafficLight_target';
+tc.topCapsule = 'TrafficLightComponent.emx#_VvC0gMj8Eemz-Kts3CmcDQ';
