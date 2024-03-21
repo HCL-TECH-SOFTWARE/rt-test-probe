@@ -191,6 +191,45 @@ module.exports = function(host, port) {
     }
 
     /**
+     * Send a JSON command to the RT application. Returns a promise which will be resolved with
+     * a status message if the command was successfully sent,
+     * or rejected with an Error object in case the command failed to be sent.
+     * @param {string} json JSON to send
+     */
+    module.sendJSON = function(json) {
+        return new Promise((resolve, reject) => {            
+            return connect()
+            .then((socket) => {            
+                socket.write(json);
+    
+                socket.on('data', (data) => {
+                    // Check if the sending was successful or not
+                    try {
+                        let reply = JSON.parse(data);
+                        if (reply.status == 'error') 
+                            reject(new Error(reply.msg));
+                        else {
+                            resolve(reply.msg);
+                            console.log('Reply: ' + reply.result);
+                        }
+                    }
+                    catch (e) {
+                        // Ignore JSON parse errors - could happen if extra data is read from the socket like a trailing newline
+                    }
+                    socket.end();                
+                });
+                socket.on('error', function(err) {        
+                    console.log('Failed to send to server : ' + json);                
+                    reject(err);
+                });
+            })
+            .catch((err) => {
+                reject(err);
+            });
+        });
+    }
+
+    /**
      * Invoke an event to the RT application. Returns a promise which will be resolved with
      * the result of invoking the event, which is an object which a.o.t contains the reply messages
      * received. If invoking the event fails, the promise is rejected with an Error object.

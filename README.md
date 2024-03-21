@@ -18,7 +18,7 @@ executable.EXE -URTS_DEBUG=quit
 ```
 4. You will see a printout similar to this:
 ```plaintext
-RT C++ Target Run Time System - Release 7.1.00
+RT C++ Target Run Time System - Release 8.0.02
 
 targetRTS: observability listening not enabled
   Task 0 detached
