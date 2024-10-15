@@ -1,0 +1,22 @@
+{
+  "name": "rt-tcp-utils",
+  "version": "0.0.1",
+  "description": "JavaScript utilities for communicating with a C++ real-time application over TCP",
+  "keywords": ["model-rt", "code-rt", "tcp", "tcp-server"],  
+  "author": "Mattias Mohlin",
+  "license": "MIT",
+  "main": "rt-tcp-utils.js",
+  "dependencies": {
+    
+  },  
+  "jshintConfig": {
+    "esversion": 6,
+    "strict": true,
+    "-W097": true,
+    "node": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HCL-TECH-SOFTWARE/rt-test-probe"
+  }
+}
